@@ -20,9 +20,10 @@
         h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
             letter-spacing: -0.03em;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            hyphens: auto;
+            /* Removido hyphens e break-word para evitar cortes no meio das palavras */
+            word-wrap: normal;
+            overflow-wrap: normal;
+            hyphens: none;
         }
         .futuristic-dots {
             background-image: radial-gradient(rgba(15, 23, 42, 0.1) 1.5px, transparent 0);
@@ -60,9 +61,10 @@
         
         @media (max-width: 768px) {
             .mobile-title {
-                font-size: 2.1rem !important; /* Ajuste para evitar corte de "VISIBILIDADE" */
-                line-height: 1.1 !important;
-                letter-spacing: -0.02em !important;
+                /* Redução estratégica do tamanho da fonte para que palavras como VISIBILIDADE não quebrem */
+                font-size: 1.85rem !important; 
+                line-height: 1.2 !important;
+                letter-spacing: -0.01em !important;
             }
             .mobile-text {
                 font-size: 1.05rem !important;

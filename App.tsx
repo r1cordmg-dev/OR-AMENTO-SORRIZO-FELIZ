@@ -28,7 +28,7 @@ const SectionTitle: React.FC<{ children: React.ReactNode, align?: 'center' | 'le
   }[weight];
 
   return (
-    <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-7xl ${weightClass} mb-8 leading-[1.05] tracking-tight ${gradient ? 'gradient-text' : (light ? 'text-white' : 'text-slate-900')} ${align === 'center' ? 'text-center' : ''} break-words overflow-visible`}>
+    <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-7xl ${weightClass} mb-8 leading-[1.05] tracking-tight ${gradient ? 'gradient-text' : (light ? 'text-white' : 'text-slate-900')} ${align === 'center' ? 'text-center' : ''} break-normal overflow-visible`}>
       {children}
     </h2>
   );
@@ -84,7 +84,7 @@ const Hero: React.FC = () => (
     <div className="max-w-7xl mx-auto px-6 container-padding">
       <div className="lg:w-3/5 fade-in-up">
         <ExclusiveBadge />
-        <h1 className="text-4xl md:text-9xl font-black text-slate-900 mb-8 sm:mb-14 leading-[1.1] tracking-tighter text-impact-strong mobile-title break-words">
+        <h1 className="text-4xl md:text-9xl font-black text-slate-900 mb-8 sm:mb-14 leading-[1.2] tracking-tighter text-impact-strong mobile-title break-normal">
           A CLINICA Sorriso Feliz <br className="hidden sm:block" />
           <span className="gradient-text italic">merece VISIBILIDADE.</span>
         </h1>
@@ -278,7 +278,7 @@ const FinalCTA: React.FC = () => (
              <Star className="w-4 h-4 sm:w-5 h-5 text-yellow-400 fill-yellow-400 animate-pulse flex-shrink-0" />
              <span className="text-[9px] sm:text-[13px] font-black text-white uppercase tracking-[0.1em] sm:tracking-[0.5em] whitespace-nowrap overflow-hidden text-ellipsis">Convite Estratégico Exclusivo</span>
           </div>
-          <h2 className="text-4xl md:text-9xl font-black text-white mb-10 sm:mb-16 leading-[1.1] text-impact-strong mobile-title break-words w-full">
+          <h2 className="text-4xl md:text-9xl font-black text-white mb-10 sm:mb-16 leading-[1.2] text-impact-strong mobile-title break-normal w-full">
             A CLINICA Sorriso Feliz <br className="hidden sm:block" /> merece VISIBILIDADE.
           </h2>
           <p className="text-xl md:text-4xl text-slate-300 font-light mb-16 sm:mb-24 leading-relaxed mobile-text">
@@ -291,11 +291,11 @@ const FinalCTA: React.FC = () => (
               className="group inline-flex items-center justify-center px-8 py-6 sm:px-20 sm:py-8 bg-white text-slate-950 rounded-[2rem] sm:rounded-[2.5rem] text-lg sm:text-3xl font-black hover:bg-slate-50 hover:scale-[1.05] transition-all w-full sm:w-auto"
             >
               Agendar Reunião
-              <ArrowRight className="ml-4 sm:ml-5 w-6 h-6 sm:w-10 h-10 group-hover:translate-x-4 transition-transform" />
+              <ArrowRight className="ml-4 sm:ml-5 w-8 h-8 sm:w-10 h-10 group-hover:translate-x-4 transition-transform" />
             </a>
             <div className="flex items-center space-x-4 mt-6 sm:mt-12 opacity-60">
               <MapPin size={20} className="text-blue-500" />
-              <p className="text-[9px] sm:text-[14px] text-slate-400 uppercase tracking-[0.15em] sm:tracking-[0.3em] font-black break-words">Consultoria Premium • Av. Brasília, 1557</p>
+              <p className="text-[9px] sm:text-[14px] text-slate-400 uppercase tracking-[0.15em] sm:tracking-[0.3em] font-black break-normal">Consultoria Premium • Av. Brasília, 1557</p>
             </div>
           </div>
         </div>

@@ -16,8 +16,8 @@ import {
   ExternalLink
 } from 'lucide-react';
 
-// WhatsApp atualizado para 31904499024
-const WHATSAPP_LINK = "https://wa.me/5531904499024?text=Olá!%20Li%20a%20proposta%20estratégica%20da%20Future%20Agency%20Tecnology%20e%20gostaria%20de%20agendar%20uma%20reunião%20para%20a%20Clínica%20Sorriso%20Feliz.";
+// WhatsApp atualizado para o novo número: 31994499024
+const WHATSAPP_LINK = "https://wa.me/5531994499024?text=Olá!%20Li%20a%20proposta%20estratégica%20da%20Future%20Agency%20Tecnology%20e%20gostaria%20de%20agendar%20uma%20reunião%20para%20a%20Clínica%20Sorriso%20Feliz.";
 
 const SectionTitle: React.FC<{ children: React.ReactNode, align?: 'center' | 'left', gradient?: boolean, light?: boolean, weight?: 'light' | 'normal' | 'bold' | 'black' }> = ({ children, align = 'left', gradient, light, weight = 'light' }) => {
   const weightClass = {
@@ -72,7 +72,7 @@ const Header: React.FC = () => (
 );
 
 const Hero: React.FC = () => (
-  <section className="relative pt-28 pb-16 sm:pt-48 sm:pb-32 md:pt-64 md:pb-72 overflow-hidden clinical-gradient-main futuristic-dots">
+  <section className="relative pt-32 pb-20 sm:pt-48 sm:pb-32 md:pt-64 md:pb-72 overflow-hidden clinical-gradient-main futuristic-dots">
     <div className="absolute top-0 right-0 -z-10 w-1/2 h-full hidden lg:block overflow-hidden rounded-bl-[200px] shadow-inner border-l border-b border-white">
       <div className="absolute inset-0 bg-gradient-to-r from-blue-50 via-transparent to-transparent z-10" />
       <img 
@@ -82,17 +82,17 @@ const Hero: React.FC = () => (
       />
     </div>
     <div className="max-w-7xl mx-auto px-6 container-padding">
-      <div className="lg:w-3/5 fade-in-up">
+      <div className="lg:w-3/5 fade-in-up mobile-center-flex">
         <ExclusiveBadge />
-        <h1 className="text-4xl md:text-9xl font-black text-slate-900 mb-8 sm:mb-14 leading-[1.2] tracking-tighter text-impact-strong mobile-title break-normal">
+        <h1 className="text-4xl md:text-9xl font-black text-slate-900 mb-8 sm:mb-14 leading-[1.1] tracking-tighter text-impact-strong mobile-title break-normal">
           A CLINICA Sorriso Feliz <br className="hidden sm:block" />
           <span className="gradient-text italic">merece VISIBILIDADE.</span>
         </h1>
         <p className="text-xl md:text-3xl text-slate-500 mb-10 sm:mb-12 leading-relaxed font-light max-w-2xl mobile-text">
           Uma proposta de site profissional pensada para clínicas odontológicas que valorizam <span className="text-slate-900 font-semibold underline decoration-blue-500 underline-offset-8">confiança, credibilidade e experiência</span>.
         </p>
-        <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 mt-12 sm:mt-20">
-          <a href={WHATSAPP_LINK} target="_blank" className="inline-flex items-center justify-center px-10 py-6 sm:px-16 sm:py-7 bg-slate-950 text-white rounded-3xl text-lg sm:text-xl font-black hover:bg-blue-700 hover:scale-[1.05] transition-all group cta-button-glow text-center">
+        <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 mt-12 sm:mt-20 w-full sm:w-auto">
+          <a href={WHATSAPP_LINK} target="_blank" className="inline-flex items-center justify-center px-10 py-6 sm:px-16 sm:py-7 bg-slate-950 text-white rounded-3xl text-lg sm:text-xl font-black hover:bg-blue-700 hover:scale-[1.02] transition-all group cta-button-glow text-center shadow-xl">
             Agendar reunião estratégica
             <ChevronRight className="ml-3 sm:ml-4 w-6 h-6 sm:w-7 h-7 group-hover:translate-x-2 transition-transform" />
           </a>
@@ -288,10 +288,10 @@ const FinalCTA: React.FC = () => (
             <a 
               href={WHATSAPP_LINK}
               target="_blank"
-              className="group inline-flex items-center justify-center px-8 py-6 sm:px-20 sm:py-8 bg-white text-slate-950 rounded-[2rem] sm:rounded-[2.5rem] text-lg sm:text-3xl font-black hover:bg-slate-50 hover:scale-[1.05] transition-all w-full sm:w-auto"
+              className="group inline-flex items-center justify-center px-8 py-6 sm:px-20 sm:py-8 bg-white text-slate-950 rounded-[2rem] sm:rounded-[2.5rem] text-lg sm:text-3xl font-black hover:bg-slate-50 hover:scale-[1.05] transition-all w-full sm:w-auto shadow-2xl"
             >
               Agendar Reunião
-              <ArrowRight className="ml-4 sm:ml-5 w-8 h-8 sm:w-10 h-10 group-hover:translate-x-4 transition-transform" />
+              <ArrowRight className="ml-4 sm:ml-5 w-6 h-6 sm:w-10 h-10 group-hover:translate-x-4 transition-transform" />
             </a>
             <div className="flex items-center space-x-4 mt-6 sm:mt-12 opacity-60">
               <MapPin size={20} className="text-blue-500" />

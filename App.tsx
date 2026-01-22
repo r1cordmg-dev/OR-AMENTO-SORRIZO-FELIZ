@@ -4,27 +4,21 @@ import {
   ChevronRight, 
   Users, 
   Star, 
-  Activity,
   Award,
   Layers,
   TrendingDown,
   AlertCircle,
   ArrowRight,
   Target,
-  BarChart3,
   Sparkles,
   MapPin,
-  Map as MapIcon,
   Navigation,
-  Eye,
-  TrendingUp,
   ExternalLink
 } from 'lucide-react';
 
 // WhatsApp atualizado para 31904499024
 const WHATSAPP_LINK = "https://wa.me/5531904499024?text=Olá!%20Li%20a%20proposta%20estratégica%20da%20Future%20Agency%20Tecnology%20e%20gostaria%20de%20agendar%20uma%20reunião%20para%20a%20Clínica%20Sorriso%20Feliz.";
 
-// Shared Components
 const SectionTitle: React.FC<{ children: React.ReactNode, align?: 'center' | 'left', gradient?: boolean, light?: boolean, weight?: 'light' | 'normal' | 'bold' | 'black' }> = ({ children, align = 'left', gradient, light, weight = 'light' }) => {
   const weightClass = {
     light: 'font-light',
@@ -34,18 +28,18 @@ const SectionTitle: React.FC<{ children: React.ReactNode, align?: 'center' | 'le
   }[weight];
 
   return (
-    <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-7xl ${weightClass} mb-8 leading-[1.05] tracking-tight ${gradient ? 'gradient-text' : (light ? 'text-white' : 'text-slate-900')} ${align === 'center' ? 'text-center' : ''} break-words`}>
+    <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-7xl ${weightClass} mb-8 leading-[1.05] tracking-tight ${gradient ? 'gradient-text' : (light ? 'text-white' : 'text-slate-900')} ${align === 'center' ? 'text-center' : ''} break-words overflow-visible`}>
       {children}
     </h2>
   );
 };
 
 const ExclusiveBadge: React.FC = () => (
-  <div className="inline-flex items-center space-x-3 px-5 py-2.5 sm:px-8 sm:py-4 bg-white border border-slate-100 rounded-full mb-10 sm:mb-14 shadow-2xl glass-card relative overflow-hidden group">
+  <div className="inline-flex items-center space-x-3 px-4 py-2 sm:px-8 sm:py-4 bg-white border border-slate-100 rounded-full mb-8 sm:mb-14 shadow-2xl glass-card relative overflow-hidden group max-w-full">
     <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-    <div className="relative flex items-center space-x-2 sm:space-x-3">
-      <Award className="w-4 h-4 sm:w-6 h-6 text-blue-600" />
-      <span className="text-[9px] sm:text-[12px] font-extrabold text-slate-900 uppercase tracking-[0.15em] sm:tracking-[0.45em] whitespace-nowrap">Proposta Estratégica Exclusiva • Sorriso Feliz</span>
+    <div className="relative flex items-center space-x-2">
+      <Award className="w-4 h-4 sm:w-6 h-6 text-blue-600 flex-shrink-0" />
+      <span className="text-[8px] sm:text-[12px] font-extrabold text-slate-900 uppercase tracking-widest sm:tracking-[0.45em] break-normal">Proposta Estratégica Exclusiva • Sorriso Feliz</span>
     </div>
   </div>
 );
@@ -78,7 +72,7 @@ const Header: React.FC = () => (
 );
 
 const Hero: React.FC = () => (
-  <section className="relative pt-32 pb-20 sm:pt-48 sm:pb-32 md:pt-64 md:pb-72 overflow-hidden clinical-gradient-main futuristic-dots">
+  <section className="relative pt-28 pb-16 sm:pt-48 sm:pb-32 md:pt-64 md:pb-72 overflow-hidden clinical-gradient-main futuristic-dots">
     <div className="absolute top-0 right-0 -z-10 w-1/2 h-full hidden lg:block overflow-hidden rounded-bl-[200px] shadow-inner border-l border-b border-white">
       <div className="absolute inset-0 bg-gradient-to-r from-blue-50 via-transparent to-transparent z-10" />
       <img 
@@ -203,10 +197,10 @@ const FinancialImpact: React.FC = () => (
 const MiddleCTA: React.FC = () => (
   <section className="py-20 sm:py-32 bg-white relative">
     <div className="max-w-7xl mx-auto px-6 container-padding">
-      <div className="bg-slate-50 rounded-[3rem] sm:rounded-[4rem] p-10 sm:p-20 flex flex-col lg:flex-row items-center justify-between border border-slate-100 premium-shadow text-center lg:text-left">
+      <div className="bg-slate-50 rounded-[3rem] sm:rounded-[4rem] p-8 sm:p-20 flex flex-col lg:flex-row items-center justify-between border border-slate-100 premium-shadow text-center lg:text-left">
         <div className="mb-10 lg:mb-0">
           <SectionTitle weight="bold">Não permita que sua clínica <br className="hidden sm:block" /> continue invisível.</SectionTitle>
-          <p className="text-lg sm:text-xl text-slate-400 font-light">Sua excelência física merece uma representação digital correspondente.</p>
+          <p className="text-lg sm:text-xl text-slate-400 font-light mobile-text">Sua excelência física merece uma representação digital correspondente.</p>
         </div>
         <a href={WHATSAPP_LINK} target="_blank" className="inline-flex items-center justify-center px-10 py-6 sm:px-14 sm:py-7 bg-blue-600 text-white rounded-3xl text-lg sm:text-xl font-black uppercase tracking-[0.2em] hover:bg-blue-700 hover:scale-[1.05] transition-all shadow-xl">
           Agendar Reunião
@@ -275,31 +269,33 @@ const SolutionSection: React.FC = () => (
 const FinalCTA: React.FC = () => (
   <section id="agendar" className="py-24 sm:py-56 bg-white">
     <div className="max-w-7xl mx-auto px-6 text-center container-padding">
-      <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 rounded-[4rem] sm:rounded-[6rem] p-10 sm:p-24 md:p-48 relative overflow-hidden shadow-3xl">
+      <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 rounded-[4rem] sm:rounded-[6rem] p-8 sm:p-24 md:p-48 relative overflow-hidden shadow-3xl">
         <div className="absolute inset-0 futuristic-dots opacity-5 pointer-events-none" />
         <div className="absolute -bottom-64 -right-64 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[150px]" />
         
-        <div className="relative z-10 max-w-5xl mx-auto">
-          <div className="inline-flex items-center space-x-3 px-6 py-2.5 sm:px-8 sm:py-3 bg-white/10 backdrop-blur-3xl rounded-full mb-10 sm:mb-16 border border-white/10">
-             <Star className="w-4 h-4 sm:w-5 h-5 text-yellow-400 fill-yellow-400 animate-pulse" />
-             <span className="text-[9px] sm:text-[13px] font-black text-white uppercase tracking-[0.2em] sm:tracking-[0.5em] whitespace-nowrap">Convite Estratégico Exclusivo</span>
+        <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+          <div className="inline-flex items-center space-x-3 px-5 py-2 sm:px-8 sm:py-3 bg-white/10 backdrop-blur-3xl rounded-full mb-10 sm:mb-16 border border-white/10 max-w-full overflow-hidden">
+             <Star className="w-4 h-4 sm:w-5 h-5 text-yellow-400 fill-yellow-400 animate-pulse flex-shrink-0" />
+             <span className="text-[9px] sm:text-[13px] font-black text-white uppercase tracking-[0.1em] sm:tracking-[0.5em] whitespace-nowrap overflow-hidden text-ellipsis">Convite Estratégico Exclusivo</span>
           </div>
-          <h2 className="text-4xl md:text-9xl font-black text-white mb-10 sm:mb-16 leading-[1.1] text-impact-strong mobile-title break-words">A CLINICA Sorriso Feliz <br className="hidden sm:block" /> merece VISIBILIDADE.</h2>
+          <h2 className="text-4xl md:text-9xl font-black text-white mb-10 sm:mb-16 leading-[1.1] text-impact-strong mobile-title break-words w-full">
+            A CLINICA Sorriso Feliz <br className="hidden sm:block" /> merece VISIBILIDADE.
+          </h2>
           <p className="text-xl md:text-4xl text-slate-300 font-light mb-16 sm:mb-24 leading-relaxed mobile-text">
             Vamos entender o momento atual da sua clínica em <span className="text-white font-black underline decoration-blue-500 underline-offset-12">Santa Luzia</span> e apresentar a solução definitiva.
           </p>
-          <div className="flex flex-col items-center gap-8 sm:gap-10">
+          <div className="flex flex-col items-center gap-8 sm:gap-10 w-full">
             <a 
               href={WHATSAPP_LINK}
               target="_blank"
-              className="group inline-flex items-center justify-center px-10 py-6 sm:px-20 sm:py-8 bg-white text-slate-950 rounded-[2rem] sm:rounded-[2.5rem] text-xl sm:text-3xl font-black hover:bg-slate-50 hover:scale-[1.05] transition-all"
+              className="group inline-flex items-center justify-center px-8 py-6 sm:px-20 sm:py-8 bg-white text-slate-950 rounded-[2rem] sm:rounded-[2.5rem] text-lg sm:text-3xl font-black hover:bg-slate-50 hover:scale-[1.05] transition-all w-full sm:w-auto"
             >
               Agendar Reunião
-              <ArrowRight className="ml-4 sm:ml-5 w-8 h-8 sm:w-10 h-10 group-hover:translate-x-4 transition-transform" />
+              <ArrowRight className="ml-4 sm:ml-5 w-6 h-6 sm:w-10 h-10 group-hover:translate-x-4 transition-transform" />
             </a>
             <div className="flex items-center space-x-4 mt-6 sm:mt-12 opacity-60">
               <MapPin size={20} className="text-blue-500" />
-              <p className="text-[10px] sm:text-[14px] text-slate-400 uppercase tracking-[0.2em] sm:tracking-[0.3em] font-black">Consultoria Premium • Av. Brasília, 1557</p>
+              <p className="text-[9px] sm:text-[14px] text-slate-400 uppercase tracking-[0.15em] sm:tracking-[0.3em] font-black break-words">Consultoria Premium • Av. Brasília, 1557</p>
             </div>
           </div>
         </div>
